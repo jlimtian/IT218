@@ -35,8 +35,10 @@
 	<td><?php echo $return['createddate']; ?></td>
 	<td><?php echo $return['duedate']; ?></td>
 	<td><?php echo $return['message']; ?></td>
-	<td><button id = "btn" type = "BUTTON"><b> MODIFY</b></button></td>
-	<td><button id = "btn" type = "BUTTON"><b> DELETE</b></button></td>
+	<td><button id = "btn" type = "BUTTON" 
+		onclick="window.location.href = '../modify.html';"><b> MODIFY</b></button></td>
+	<td><button id = "btn" type = "BUTTON"
+		onclick="window.location.href = '../delete.php';"><b> DELETE</b></button></td>
 	<td><button id = "btn" type = "BUTTON"><b> COMPLETE</b></button></td>
 </tr>
 
@@ -64,8 +66,10 @@
 	<td><?php echo $return['createddate']; ?></td>
 	<td><?php echo $return['duedate']; ?></td>
 	<td><?php echo $return['message']; ?></td>
-	<td><button id = "btn" type = "BUTTON"><b> MODIFY</b></button></td>
-	<td><button id = "btn" type = "BUTTON"><b> DELETE</b></button></td>
+	<td><button id = "btn" type = "BUTTON"
+		onclick="window.location.href = '../modify.html';"><b> MODIFY</b></button></td>
+	<td><button id = "btn" type = "BUTTON"
+		onclick="window.location.href = '../delete.php';"><b> DELETE</b></button></td>
 	<td><button id = "btn" type = "BUTTON"><b> MARK INCOMPLETE</b></button></td>
 </tr>
 
