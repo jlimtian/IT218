@@ -5,7 +5,7 @@
 	$db = new connection_db();
 	$conn = $db->connectDB();
 	$run_q = new run_SQL();
-	$results = $run_q->runQuery($sql, $conn, $email);
+	$returns = $run_q->runQuery($sql, $conn, $email);
 
 	//fnam eand lname on every page
 	/*$fname = $_POST['whatever fname field is called'];
@@ -21,30 +21,59 @@
 	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
 	//every page
 	
+	
+	$num_recs = 0;
 	echo "Incomplete Tasks: <br><br>";
-	if(count($results) > 0)
-	{
-		echo "<table border=\"0\"><tr><th>ID</th><th>Owner Email</th><th>Title</th><th>Date Created</th><th>Date Due</th><th>Message</th></tr>";
-		foreach ($results as $row) {
-			echo "<tr><td>".$row["id"]."</td><td>".$row["owneremail"]."</td><td align='center'>".$row["title"]."</td><td>".$row["createddate"]."</td><td>".$row["duedate"]."</td><td>".$row["message"]."</td><td><button id = 'btn' type = 'BUTTON'><b> MODIFY</b></button></td><td><button id = 'btn' type = 'BUTTON'><b> DELETE</b></button></td><td><button id = 'btn' type = 'BUTTON'><b> MARK COMPLETE</b></button></td></tr>";
-		}
-		
-	}else{
-		echo '0 results';
-	}
+	echo "<table border=\"0\"><tr><th>ID</th><th>Owner Email</th><th>Title</th><th>Date Created</th><th>Date Due</th><th>Message</th></tr>";
+	foreach($returns as $return) {
+?>
+
+<tr>
+	<td><?php echo $return['id']; ?></td>
+	<td><?php echo $return['owneremail']; ?></td>
+	<td><?php echo $return['title']; ?></td>
+	<td><?php echo $return['createddate']; ?></td>
+	<td><?php echo $return['duedate']; ?></td>
+	<td><?php echo $return['message']; ?></td>
+	<td><button id = "btn" type = "BUTTON"><b> MODIFY</b></button></td>
+	<td><button id = "btn" type = "BUTTON"><b> DELETE</b></button></td>
+	<td><button id = "btn" type = "BUTTON"><b> COMPLETE</b></button></td>
+</tr>
+
+<?php 
+	$num_recs++;
+	echo "<br>"; }
+	
+	echo "<br><br>" . $num_recs . " task(s) found. <br><br>";
 	
 	$sql = "SELECT id, owneremail, title, createddate, duedate, message FROM todos WHERE owneremail = :email AND isdone = 1";
 	$results = $run_q->runQuery($sql, $conn, $email);
+	echo "Complete Tasks: <br><br>";
 	
-	if(count($results) > 0)
-	{
-		echo "Complete Tasks: <br><br>";
-		echo "<table border=\"0\"><tr><th>ID</th><th>Owner Email</th><th>Title</th><th>Date Created</th><th>Date Due</th><th>Message</th></tr>";
-		foreach ($results as $row) {
-			echo "<tr><td>".$row["id"]."</td><td>".$row["owneremail"]."</td><td align='center'>".$row["title"]."</td><td>".$row["createddate"]."</td><td>".$row["duedate"]."</td><td>".$row["message"]."</td><td><button id = 'btn' type = 'BUTTON'><b> MODIFY</b></button></td><td><button id = 'btn' type = 'BUTTON'><b> DELETE</b></button></td><td><button id = 'btn' type = 'BUTTON'><b> MARK INCOMPLETE</b></button></td></tr>";
-		}
-		
-	}else{
-		echo '0 results';
-	}
+	$num_comp_recs = 0;
+	
+	echo "<table border=\"0\"><tr><th>ID</th><th>Owner Email</th><th>Title</th><th>Date Created</th><th>Date Due</th><th>Message</th></tr>";
+	foreach($returns as $return) {
+
+?>
+
+<tr>
+	<td><?php echo $return['id']; ?></td>
+	<td><?php echo $return['owneremail']; ?></td>
+	<td><?php echo $return['title']; ?></td>
+	<td><?php echo $return['createddate']; ?></td>
+	<td><?php echo $return['duedate']; ?></td>
+	<td><?php echo $return['message']; ?></td>
+	<td><button id = "btn" type = "BUTTON"><b> MODIFY</b></button></td>
+	<td><button id = "btn" type = "BUTTON"><b> DELETE</b></button></td>
+	<td><button id = "btn" type = "BUTTON"><b> MARK INCOMPLETE</b></button></td>
+</tr>
+
+<?php 
+	$num_comp_recs++;
+	echo "<br>"; } 
+	
+	echo "<br><br>" . $num_comp_recs . " task(s) found. <br>";
+	
+	
 ?>
