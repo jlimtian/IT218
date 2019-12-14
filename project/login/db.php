@@ -62,6 +62,26 @@ class run_SQL{
 			$error_out->http_error("500 Internal Server Error\n\n"."There was a SQL error:\n\n" . $e->getMessage());
 		}	
 	}
+	
+	function runDeleteQuery($query, $conn, $idVal) {
+		try {
+			$q = $conn->prepare($query);
+			$q->bindValue(':id', $idVal);
+			$q->execute();
+			$results = $q->fetchAll();
+			$q->closeCursor();
+			return $results;	
+		} catch (PDOException $e) {
+			$error_out = new report_error();
+			$error_out->http_error("500 Internal Server Error\n\n"."There was a SQL error:\n\n" . $e->getMessage());
+		}	
+	}
+	
+	//other temp variables
+	/*$idVal; //just need ownerid
+	$ownID;
+	$user;
+	$pass;*/
 }
 
 
