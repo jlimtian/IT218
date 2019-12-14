@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="">
 
     <!-- main.js -->
-    <script src=""></script>
+    <script src="../checkRegister.js"></script>
 
     <!-- Favicon and Tab Head -->
     <title>Sign Up | NAME</title>

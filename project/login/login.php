@@ -15,10 +15,9 @@
     <link rel="stylesheet" href="">
 
     <!-- main.js -->
-    <script src=""></script>
+    <script src="../checkLogin.js"></script>
 
     <!-- Favicon and Tab Head -->
-    <link rel='icon' href='../images/favicon.png' type='image/x-icon'/>
     <title>Sign In | NAME</title>
 </head>
 
