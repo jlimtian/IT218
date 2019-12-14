@@ -19,6 +19,7 @@ function valLogin() {
         $stmt->bindParam(':username', $email);
         $stmt->execute();
         $response = $stmt->fetch(PDO::FETCH_ASSOC);
+	$id = $response["id"];
 
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
