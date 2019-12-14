@@ -45,12 +45,13 @@ class run_SQL{
 		}	
 	}
 	
-	function runSQLQuery($query, $conn, $email, $title, $datecreate, $datedue, $note) {
+	function runSQLQuery($query, $conn, $idVal, $email, $ownID, $title, $datedue, $note) {
 		try {
 			$q = $conn->prepare($query);
+			$q->bindValue(':idVal', $idVal);
 			$q->bindValue(':email', $email);
+			$q->bindValue(':ownID', $ownID);
 			$q->bindValue(':title', $title);
-			$q->bindValue(':datecreate', $datecreate);
 			$q->bindValue(':datedue', $datedue);
 			$q->bindValue(':message', $note);
 			$q->execute();
