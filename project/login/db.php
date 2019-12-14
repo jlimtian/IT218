@@ -1,0 +1,69 @@
+<?php
+class data_connect{
+	function http_error($message) 
+	{
+		header("Content-type: text/plain");
+		die($message);
+	}
+}
+	
+class connection_db{
+	
+	private $hostname = "localhost";
+	private $username = "root";
+	private $password = "";
+	private $dbname = "jag94";
+	public $conn = NULL;
+	
+	public function connectDB(){
+		try 
+		{
+			$this->conn = new PDO("mysql:host=$this->hostname;dbname=$this->dbname", $this->username, $this->password);
+			if($this->conn != null){echo "";}
+		}
+		catch(PDOException $e)
+		{
+			$error_out = new report_error();
+			$error_out->http_error("500 Internal Server Error\n\n"."There was a SQL error:\n\n" . $e->getMessage());
+		}
+		return $this->conn;
+	}
+}
+
+class run_SQL{	
+	function runQuery($query, $conn, $email) {
+		try {
+			$q = $conn->prepare($query);
+			$q->bindValue(':email', $email);
+			$q->execute();
+			$results = $q->fetchAll();
+			$q->closeCursor();
+			return $results;	
+		} catch (PDOException $e) {
+			$error_out = new report_error();
+			$error_out->http_error("500 Internal Server Error\n\n"."There was a SQL error:\n\n" . $e->getMessage());
+		}	
+	}
+	
+	function runSQLQuery($query, $conn, $email, $title, $datecreate, $datedue, $note) {
+		try {
+			$q = $conn->prepare($query);
+			$q->bindValue(':email', $email);
+			$q->bindValue(':title', $title);
+			$q->bindValue(':datecreate', $datecreate);
+			$q->bindValue(':datedue', $datedue);
+			$q->bindValue(':message', $note);
+			$q->execute();
+			$results = $q->fetchAll();
+			$q->closeCursor();
+			return $results;	
+		} catch (PDOException $e) {
+			$error_out = new report_error();
+			$error_out->http_error("500 Internal Server Error\n\n"."There was a SQL error:\n\n" . $e->getMessage());
+		}	
+	}
+}
+
+
+
+?>
