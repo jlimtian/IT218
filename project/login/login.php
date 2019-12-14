@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,
         shrink-to-fit=no">
     <!-- main.css -->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../main.css">
 
     <!-- main.js -->
     <script src="../checkLogin.js"></script>
