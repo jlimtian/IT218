@@ -24,7 +24,7 @@ function valLogin() {
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
         // Put target page here
-        // header('TARGET PAGE');
+        // header('../show.php');
         }
         else {
             echo 'Incorrect Login';
