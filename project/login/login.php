@@ -46,7 +46,7 @@
                     required><br><br>
                     <!-- Sign In -->
                     <input type="submit" class="submit" name="signIn" value="Sign In"><br><br>
-                </div>
+		</div>
             </form>
         </div>
     </main>
