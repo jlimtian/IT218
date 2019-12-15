@@ -13,19 +13,21 @@ function valLogin() {
 			
 	
         // connect to database
-        $sql = "select password, id from accounts where email = :email";
+        $sql = "SELECT id, password FROM accounts WHERE email = :email";
         $db = new connection_db();
 		$conn = $db->connectDB();
 		$run_q = new run_SQL();
-        $response = $run_q->runQuery($sql, $conn, $email);
+        $responses = $run_q->runQuery($sql, $conn, $email);
+		foreach($responses as $response) {
+			$t_pass = $response['password'];
+		}
+		
 		//$id = $response["id"];
-		echo $response['password'];
 
         // check passwords
-        if(password_verify($_POST['password'] , $response['password'])) {
+        if(password_verify($_POST['password'] , $t_pass)) {
         // Put target page here
         //header('show.php');
-	echo $password;
         }
         else {
             echo 'Incorrect Login';
