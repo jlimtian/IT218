@@ -41,7 +41,7 @@ if(isset($_POST['email'])
 			print_r($stmt->errorInfo());
 			
 			// echo var_export($response, true);
-			header('Location: ../login.php');
+			header('Location: login.php');
 		}
 		catch(Exception $e){
 			echo $e->getMessage();
