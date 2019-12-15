@@ -7,23 +7,6 @@
 	$run_q = new run_SQL();
 	$returns = $run_q->runDeleteQuery($sql, $conn, $idVal);
 	
-	
-	echo "<table border=\"0\"><tr><th>ID</th><th>Owner Email</th><th>Title</th><th>Date Created</th><th>Date Due</th><th>Message</th></tr>";
-	foreach($returns as $return) {
-?>
-
-<tr>
-	<td align="center"><?php echo $return['id']; ?></td>
-	<td align="center"><?php echo $return['title']; ?></td>
-	<td align="center"><?php echo $return['createddate']; ?></td>
-	<td align="center"><?php echo $return['duedate']; ?></td>
-	<td align="center"><?php echo $return['message']; ?></td>
-</tr>
-
-<?php 
-	$num_recs++;
-	echo "<br>"; }
-	
 	$sql = "UPDATE todos SET id = :idVal, owneremail = :email";
 	$timedue = $title = $dated = $note = '';
 	
