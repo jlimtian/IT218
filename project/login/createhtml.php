@@ -1,6 +1,7 @@
 <html>
-      	<input type="submit" class="submit" name="logout" value="Logout"
-                onclick="window.location.href = 'logout.php';"><br><br>
+      	<input style="float:right;"
+		type="submit" class="submit" name="logout" value="Logout"
+                	onclick="window.location.href = 'logout.php';"><br><br>
 </html>
 
 <?php

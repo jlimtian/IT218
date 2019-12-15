@@ -1,3 +1,9 @@
+<html>
+      	<input style="float:right;"
+                type="submit" class="submit" name="logout" value="Logout"
+                        onclick="window.location.href = 'logout.php';"><br><br>
+</html>
+
 <?php
 	$idVal = $_POST['btnmod'];
 	

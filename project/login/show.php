@@ -1,6 +1,9 @@
 <html>
-      	<input type="submit" class="submit" name="logout" value="Logout"
-                onclick="window.location.href = 'logout.php';"><br><br>
+	<body>
+      		<input style="float:right;"
+		type="submit" class="submit" name="logout" value="Logout"
+                	onclick="window.location.href = 'logout.php';"><br><br>
+	</body>
 </html>
 
 <?php
@@ -23,7 +26,7 @@
 	$lname = "Lee";
 	$email = "janedoe@njit.edu";
 	
-	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
+	echo "<p style='background-color:aliceblue;'>" . "Welcome, " . $fname . " " . $lname . ".<br><br>";
 	//every page
 	
 	
