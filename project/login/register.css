@@ -21,7 +21,7 @@ header {
 
 form {
     position: absolute;
-    top: 61.6%;
+    top: 61%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -31,7 +31,7 @@ form {
     width: 400px;
     height: 760px;
     padding: 80px 40px;
-    padding-top: 40px;
+    padding-top: 30px;
     background: rgba(0,0,0,0.6);
     /*
     margin: auto;

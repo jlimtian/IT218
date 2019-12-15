@@ -71,8 +71,8 @@
 
 <footer>
         <div class="footer" id="myFooter">
-                <!-- <span class="text-muted">&copy; OUR NAMES, 2019 |  
-                    Terms Of Use  |  Privacy Statement</span> -->
+                <span class="text-muted">&copy; OUR NAMES, 2019 |  
+                    Terms Of Use  |  Privacy Statement </span>
         </div>
 </footer>
 
