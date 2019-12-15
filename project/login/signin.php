@@ -3,34 +3,31 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 function valLogin() {
     
         if(isset($_POST['email']) && isset($_POST['password'])) {        
         $email = $_POST['email'];
         $password = $_POST['password'];
-        require("config.php");
+        require("db.php");
             
+			
+	
         // connect to database
-        $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
-        $db = new PDO($conn_string, $username, $password);
-        $select_query = "select password, id from `accounts` where email=:username";
-        $stmt = $db->prepare($select_query);
-        $stmt->bindParam(':username', $email);
-        $stmt->execute();
-        $response = $stmt->fetch(PDO::FETCH_ASSOC);
-	$id = $response["id"];
-
+        $sql = "select password, id from `accounts` where email=:username";
+        $db = new connection_db();
+		$conn = $db->connectDB();
+		$run_q = new run_SQL();
+        $response = $run_q->runQuery($sql, $conn, $email);
+		$id = $response["id"];
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
         // Put target page here
-        // header('show.php');
+        // header('../show.php');
         }
         else {
             echo 'Incorrect Login';
         }    
     }
 }
-
 valLogin();
 ?>
