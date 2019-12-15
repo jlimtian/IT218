@@ -22,12 +22,15 @@ function valLogin() {
 			$t_pass = $response['password'];
 		}
 		
-		//$id = $response["id"];
+		$id = $response["id"];
+		
+		//echo $t_pass . "<br>";
+		//echo $password;
 
         // check passwords
-        if(password_verify($_POST['password'] , $t_pass)) {
+        if($password == $t_pass) {
         // Put target page here
-        //header('show.php');
+        header("refresh: 0, url='show.php'");
         }
         else {
             echo 'Incorrect Login';
