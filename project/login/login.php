@@ -44,9 +44,10 @@
                     <input type="password" id="password" placeholder="mypassword" name="password" 
                     required><br><br>
                     <!-- Sign In -->
-                    <input type="submit" class="submit" name="signIn" value="Sign In"><br><br>
+                    <input type="submit" class="submit" name="signIn" value="Sign In"
+			onclick="checkEmpty();"><br><br>
 		    <input type="submit" class="submit" name="signUp" value="Sign Up"
-			onclick="checkEmpty(); window.location.href = 'register.php';"><br><br>
+			onclick="window.location.href = 'register.php';"><br><br>
 		</div>
             </form>
         </div>
