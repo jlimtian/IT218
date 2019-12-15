@@ -17,13 +17,13 @@
     <script src="checkRegister.js"></script>
 
     <!-- Favicon and Tab Head -->
-    <title>Sign Up | NAME</title>
+    <title>Sign Up | Just Do It</title>
 </head>
 
 <body>
     <header>
 	    <div class="header" id="myHeader">
-            <h1>NAME</h1>
+            <h1>Just Do It</h1>
         </div>
     </header>
 
@@ -72,7 +72,7 @@
 
 <footer>
         <div class="footer" id="myFooter">
-                <span class="text-muted">&copy; OUR NAMES, 2019 |  
+                <span class="text-muted">&copy; Jhanelle Gray and Juline Limtian, 2019 |  
                     Terms Of Use  |  Privacy Statement </span>
         </div>
 </footer>

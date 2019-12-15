@@ -6,6 +6,8 @@
 	</body>
 </html>
 
+
+
 <?php
 	require 'db.php' ;
 	$sql = "SELECT id, owneremail, title, createddate, duedate, message FROM todos WHERE owneremail = :email AND isdone = 0";
@@ -14,19 +16,20 @@
 	$conn = $db->connectDB();
 	$run_q = new run_SQL();
 	$returns = $run_q->runQuery($sql, $conn, $email);
-
+	
 	//fnam eand lname on every page
-	/*$fname = $_POST['whatever fname field is called'];
-	$lname = $_POST['whatever lname field is called'];
+	/* $fname = $_POST['fname'];
+	$lname = $_POST['lname'];
 	$email = $_POST['email'];
-	$pword = $_POST['password'];*/
+	$password = $_POST['password']; */
 	
 	//temp values
 	$fname = "August";
 	$lname = "Lee";
 	$email = "janedoe@njit.edu";
 	
-	echo "<p style='background-color:aliceblue;'>" . "Welcome, " . $fname . " " . $lname . ".<br><br>";
+	
+	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
 	//every page
 	
 	
