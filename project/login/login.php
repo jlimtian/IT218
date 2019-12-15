@@ -1,5 +1,5 @@
 <?php
-    include("../signin.php");
+    include("signin.php");
     valLogin();
 ?>
 
@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,
         shrink-to-fit=no">
     <!-- main.css -->
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="main.css">
 
     <!-- main.js -->
-    <script src="../checkLogin.js"></script>
+    <script src="checkLogin.js"></script>
 
     <!-- Favicon and Tab Head -->
     <title>Sign In | NAME</title>
@@ -32,7 +32,7 @@
 	<!-- Background Image -->
         <!-- Sign In Form -->
         <div class="signin" id="mySignIn">
-            <form action="../signin.php" method="POST">
+            <form action="signin.php" method="POST">
             <h3>Sign In</h3><br><br>
                 <div class="form" id="myForm">
                     <!-- Login Email -->
@@ -46,7 +46,7 @@
                     <!-- Sign In -->
                     <input type="submit" class="submit" name="signIn" value="Sign In"><br><br>
 		    <input type="submit" class="submit" name="signUp" value="Sign Up"
-			onclick="window.location.href = '../register.php';"><br><br>
+			onclick="window.location.href = 'register.php';"><br><br>
 		</div>
             </form>
         </div>

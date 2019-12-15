@@ -1,6 +1,5 @@
 <?php
-    include("../signup.php");
-    valLogin();
+    include("signup.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,
         shrink-to-fit=no">
     <!-- main.css -->
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="register.css">
 
     <!-- main.js -->
-    <script src="../checkRegister.js"></script>
+    <script src="checkRegister.js"></script>
 
     <!-- Favicon and Tab Head -->
     <title>Sign Up | NAME</title>
@@ -30,10 +29,10 @@
 
     <main>
 	<!-- Background Image -->
-        <!-- Sign In Form -->
+        <!-- Sign Up Form -->
         <div class="signup" id="mySignUp">
-            <form action="../signup.php" method="POST">
-            <h3>Sign In</h3><br><br>
+            <form action="signup.php" method="POST">
+            <h3>Sign Up</h3><br><br>
                 <div class="form" id="myForm">
                     <!-- First Name -->
                     <label for="fname">First Namee</labl><br>
@@ -60,7 +59,9 @@
                     required><br><br>
                     <!-- Sign Up -->
                     <input type="submit" class="submit" name="signUp" value="Sign Up"
-		                onclick="window.location.href = '../login.php';"><br>
+		                onclick="window.location.href = 'signup.php';"><br>
+		    <input type="submit" class="submit" name="signIn" value="Sign In"
+				onclick="window.location.href = 'login.php';"><br><br>
                 </div>
             </form>
         </div>
