@@ -46,7 +46,7 @@
                     <!-- Sign In -->
                     <input type="submit" class="submit" name="signIn" value="Sign In"><br><br>
 		    <input type="submit" class="submit" name="signUp" value="Sign Up"
-			onclick="window.location.href = 'register.php';"><br><br>
+			onclick="checkEmpty(); window.location.href = 'register.php';"><br><br>
 		</div>
             </form>
         </div>

@@ -59,7 +59,7 @@
                     required><br><br>
                     <!-- Sign Up -->
                     <input type="submit" class="submit" name="signUp" value="Sign Up"
-		                onclick="window.location.href = 'signup.php';"><br>
+		                onclick="checkEmpty(); window.location.href = 'signup.php';"><br>
 		    <input type="submit" class="submit" name="signIn" value="Sign In"
 				onclick="window.location.href = 'login.php';"><br><br>
                 </div>
