@@ -19,6 +19,7 @@ function valLogin() {
 		$run_q = new run_SQL();
         $response = $run_q->runQuery($sql, $conn, $email);
 		//$id = $response["id"];
+		echo $response['password'];
 
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
