@@ -7,7 +7,7 @@ function valLogin() {
     
         if(isset($_POST['email']) && isset($_POST['password'])) {        
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        //$password = $_POST['password'];
         require("db.php");
             
 			
@@ -18,7 +18,7 @@ function valLogin() {
 		$conn = $db->connectDB();
 		$run_q = new run_SQL();
         $response = $run_q->runQuery($sql, $conn, $email);
-		$id = $response["id"];
+		//$id = $response["id"];
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
         // Put target page here
