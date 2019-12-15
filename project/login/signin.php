@@ -19,11 +19,8 @@ function valLogin() {
 		$run_q = new run_SQL();
         $response = $run_q->runQuery($sql, $conn, $email);
 	// $id = $response["id"];
-<<<<<<< HEAD
 		//$id = $response["id"];
-=======
 
->>>>>>> f3a6f67188ac6876ae9626f79ba420319758ef50
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
         // Put target page here
