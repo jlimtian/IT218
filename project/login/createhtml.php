@@ -1,3 +1,8 @@
+<html>
+      	<input type="submit" class="submit" name="logout" value="Logout"
+                onclick="window.location.href = 'logout.php';"><br><br>
+</html>
+
 <?php
 	$email = $_POST['btnnew'];
 ?>

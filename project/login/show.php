@@ -1,3 +1,8 @@
+<html>
+      	<input type="submit" class="submit" name="logout" value="Logout"
+                onclick="window.location.href = 'logout.php';"><br><br>
+</html>
+
 <?php
 	require 'db.php' ;
 	$sql = "SELECT id, owneremail, title, createddate, duedate, message FROM todos WHERE owneremail = :email AND isdone = 0";
@@ -83,3 +88,4 @@
 	
 	
 ?>
+
