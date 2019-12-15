@@ -18,15 +18,12 @@ function valLogin() {
 		$conn = $db->connectDB();
 		$run_q = new run_SQL();
         $response = $run_q->runQuery($sql, $conn, $email);
-<<<<<<< HEAD
 	// $id = $response["id"];
-=======
-		//$id = $response["id"];
->>>>>>> 2e6a98267d759a82d1299f96eb82a541fd6367fe
+
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
         // Put target page here
-        header('show.php');
+        //header('show.php');
         }
         else {
             echo 'Incorrect Login';
