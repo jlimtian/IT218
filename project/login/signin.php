@@ -18,7 +18,6 @@ function valLogin() {
         $db = new connection_db();
 		$conn = $db->connectDB();
 		$run_q = new run_SQL();
-<<<<<<< HEAD
         $response = $run_q->runQuery($sql, $conn, $email);
 		foreach($responses as $response) {
 			$t_pass = $response['password'];
@@ -30,7 +29,6 @@ function valLogin() {
         if(password_verify($_POST['password'] , $t_pass)) {
         // Put target page here
         //header('show.php');
-=======
         $responses = $run_q->runQuery($sql, $conn, $email);
 		foreach($responses as $response) {
 			$t_pass = $response['password'];
@@ -42,7 +40,6 @@ function valLogin() {
         if(($password == $t_pass) and ($email == $t_email)) {
         $_SESSION["id"] = $id;
         header("refresh: 0, url='show.php'");
->>>>>>> 0b8b1e875a84a84e98943cdf1f625cebe38724f4
         }
         else {
             echo 'Incorrect Login';
