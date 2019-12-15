@@ -18,17 +18,6 @@ function valLogin() {
         $db = new connection_db();
 		$conn = $db->connectDB();
 		$run_q = new run_SQL();
-        $response = $run_q->runQuery($sql, $conn, $email);
-		foreach($responses as $response) {
-			$t_pass = $response['password'];
-		}
-
-	// $id = $response["id"];	
-
-        // check passwords
-        if(password_verify($_POST['password'] , $t_pass)) {
-        // Put target page here
-        //header('show.php');
         $responses = $run_q->runQuery($sql, $conn, $email);
 		foreach($responses as $response) {
 			$t_pass = $response['password'];
