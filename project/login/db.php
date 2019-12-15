@@ -8,11 +8,11 @@ class data_connect{
 }
 	
 class connection_db{
-	
-	private $hostname = "localhost";
-	private $username = "root";
-	private $password = "";
-	private $dbname = "jag94";
+
+	private $hostname = "sql1.njit.edu";
+	private $username = "jl863";
+	private $password = "8.~A#k/A]";
+	private $dbname = "jl863";
 	public $conn = NULL;
 	
 	public function connectDB(){
