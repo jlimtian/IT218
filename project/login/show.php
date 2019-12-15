@@ -18,19 +18,29 @@
 	$returns = $run_q->runQuery($sql, $conn, $email);
 	
 	//fnam eand lname on every page
+<<<<<<< HEAD
 	/* $fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$email = $_POST['email'];
 	$password = $_POST['password']; */
+=======
+	/*$fname = $_POST['whatever fname field is called'];
+	$lname = $_POST['whatever lname field is called'];
+	$email = $_POST['email'];*/
+>>>>>>> b11161c5c54fe6c85546b97bba0713aa2b8b7986
 	
 	//temp values
 	$fname = "August";
 	$lname = "Lee";
 	$email = "janedoe@njit.edu";
 	
+<<<<<<< HEAD
 	
 	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
 	//every page
+=======
+	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
+>>>>>>> b11161c5c54fe6c85546b97bba0713aa2b8b7986
 	
 	
 	$num_recs = 0;
@@ -46,7 +56,7 @@
 	<td align="center"><?php echo $return['createddate']; ?></td>
 	<td align="center"><?php echo $return['duedate']; ?></td>
 	<td align="center"><?php echo $return['message']; ?></td>
-	<td><form action = "modify.html" method = "Post"><button id = "btnm" name = "btnmod" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> MODIFY</b></button></form></td>
+	<td><form action = "modifyhtml.php" method = "Post"><button id = "btnm" name = "btnmod" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> MODIFY</b></button></form></td>
 	<td><form action = "delete.php" method = "Post"><button id = "btnd" name = "btndel" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> DELETE</b></button></form></td>
 	<td><form action = "delete.php" method = "Post"><button id = "btnc" name = "btncomp" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> COMPLETE</b></button></form></td>
 </tr>
@@ -59,6 +69,7 @@
 	
 ?>
 
+<!DOCTYPE html>
 <form action = "createhtml.php" method = "Post"><button id = "btnn" name = "btnnew" type = "submit" value = "<?php echo $email;?>" formmethod = "post""><b> NEW</b></button></form>
 
 <?php
@@ -81,7 +92,7 @@
 	<td align="center"><?php echo $return['createddate']; ?></td>
 	<td align="center"><?php echo $return['duedate']; ?></td>
 	<td align="center"><?php echo $return['message']; ?></td>
-	<td><form action = "modify.html" method = "Post"><button id = "btnmc" name = "btnmod" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> MODIFY</b></button></form></td>
+	<td><form action = "modifyhtml.php" method = "Post"><button id = "btnmc" name = "btnmod" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> MODIFY</b></button></form></td>
 	<td><form action = "delete.php" method = "Post"><button id = "btndc" name = "btndel" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> DELETE</b></button></form></td>
 	<td><form action = "delete.php" method = "Post"><button id = "btncc" name = "btncomp" type = "submit" value = "<?php echo $return['id'];?>" formmethod = "post"><b> COMPLETE</b></button></form></td>
 </tr>
@@ -94,4 +105,3 @@
 	
 	
 ?>
-
