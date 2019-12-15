@@ -9,32 +9,31 @@
 
 
 <?php
-	require 'db.php' ;
-	$sql = "SELECT id, owneremail, title, createddate, duedate, message FROM todos WHERE owneremail = :email AND isdone = 0";
-	$email = "janedoe@njit.edu";
+	require 'db.php';
+	session_start();
+	
+	
+	$sql = "SELECT * FROM accounts WHERE id = :idVal";
+	$idVal = $_SESSION["id"];
 	$db = new connection_db();
 	$conn = $db->connectDB();
 	$run_q = new run_SQL();
+	$returns = $run_q->runDeleteQuery($sql, $conn, $idVal);
+	
+	foreach($returns as $return) {
+		$email = $return['email'];
+		$fname = $return['fname'];
+		$lname = $return['lname'];
+	}
+	
+	$sql = "SELECT id, owneremail, title, createddate, duedate, message FROM todos WHERE owneremail = :email AND isdone = 0";
 	$returns = $run_q->runQuery($sql, $conn, $email);
 	
-	//fnam eand lname on every page
-	/* $fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$email = $_POST['email'];
-	$password = $_POST['password']; */
-	
-	/*$fname = $_POST['whatever fname field is called'];
-	$lname = $_POST['whatever lname field is called'];
-	$email = $_POST['email'];*/
-	
 	//temp values
-	$fname = "August";
-	$lname = "Lee";
-	$email = "janedoe@njit.edu";
-
+	//$fname = "August";
+	//$lname = "Lee";
+	//$email = "janedoe@njit.edu";
 	
-	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
-	//every page
 	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
 	
 	
