@@ -18,29 +18,24 @@
 	$returns = $run_q->runQuery($sql, $conn, $email);
 	
 	//fnam eand lname on every page
-<<<<<<< HEAD
 	/* $fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$email = $_POST['email'];
 	$password = $_POST['password']; */
-=======
+	
 	/*$fname = $_POST['whatever fname field is called'];
 	$lname = $_POST['whatever lname field is called'];
 	$email = $_POST['email'];*/
->>>>>>> b11161c5c54fe6c85546b97bba0713aa2b8b7986
 	
 	//temp values
 	$fname = "August";
 	$lname = "Lee";
 	$email = "janedoe@njit.edu";
-	
-<<<<<<< HEAD
+
 	
 	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
 	//every page
-=======
 	echo "Welcome, " . $fname . " " . $lname . ".<br><br>";
->>>>>>> b11161c5c54fe6c85546b97bba0713aa2b8b7986
 	
 	
 	$num_recs = 0;
