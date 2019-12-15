@@ -1,8 +1,3 @@
-<?php
-    include("signin.php");
-    valLogin();
-?>
-
 <!DOCTYPE html>
 <html lang="em">
 
@@ -46,7 +41,7 @@
                     required><br><br>
                     <!-- Sign In -->
                     <input type="submit" class="submit" name="signIn" value="Sign In"
-			onclick="checkEmpty();"><br><br>
+			onclick="checkEmpty(); valLogin();"><br><br>
 		    <input type="submit" class="submit" name="signUp" value="Sign Up"
 			onclick="window.location.href = 'register.php';"><br><br>
 		</div>

@@ -13,16 +13,16 @@ function valLogin() {
 			
 	
         // connect to database
-        $sql = "select password, id from `accounts` where email=:username";
+        $sql = "select password, id from `accounts` where email=:email";
         $db = new connection_db();
 		$conn = $db->connectDB();
 		$run_q = new run_SQL();
         $response = $run_q->runQuery($sql, $conn, $email);
-		$id = $response["id"];
+	// $id = $response["id"];
         // check passwords
         if(password_verify($_POST['password'] , $response['password'])) {
         // Put target page here
-        // header('../show.php');
+        header('show.php');
         }
         else {
             echo 'Incorrect Login';
