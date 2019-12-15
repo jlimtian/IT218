@@ -41,7 +41,7 @@
                     required><br><br>
                     <!-- Sign In -->
                     <input type="submit" class="submit" name="signIn" value="Sign In"
-			onclick="checkEmpty(); valLogin();"><br><br>
+			onclick="checkEmpty();"><br><br>
 		    <input type="submit" class="submit" name="signUp" value="Sign Up"
 			onclick="window.location.href = 'register.php';"><br><br>
 		</div>
