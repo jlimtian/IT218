@@ -13,7 +13,7 @@ function valLogin() {
 			
 	
         // connect to database
-        $sql = "select password, id from `accounts` where email=:username";
+        $sql = "select password, id from `accounts` where email=:email";
         $db = new connection_db();
 		$conn = $db->connectDB();
 		$run_q = new run_SQL();
