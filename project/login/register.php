@@ -31,7 +31,8 @@
 	<!-- Background Image -->
         <!-- Sign Up Form -->
         <div class="signup" id="mySignUp">
-            <form action="signup.php" method="POST">
+        <img src="background.jpg" alt="Background">    
+	    <form action="signup.php" method="POST">
             <h3>Sign Up</h3><br><br>
                 <div class="form" id="myForm">
                     <!-- First Name -->

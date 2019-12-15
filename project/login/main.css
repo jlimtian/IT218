@@ -19,6 +19,14 @@ header {
     padding: 8px;
 }
 
+main img {
+    max-height: 100%;
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
 form {
     position: absolute;
     top: 50%;

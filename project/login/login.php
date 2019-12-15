@@ -32,7 +32,8 @@
 	<!-- Background Image -->
         <!-- Sign In Form -->
         <div class="signin" id="mySignIn">
-            <form action="signin.php" method="POST">
+        <img src="background.jpg" alt="Background">    
+	    <form action="signin.php" method="POST">
             <h3>Sign In</h3><br><br>
                 <div class="form" id="myForm">
                     <!-- Login Email -->
